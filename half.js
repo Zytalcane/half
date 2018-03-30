@@ -2,12 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 const PREFIX = "h:"
-const CALL = "c:"
-const S = "S"
-const B = "B"
-const s = "s"
-const Y = "Y"
-const y = "y"
+
+// je test sur mon pc
 
 client.on('ready', function() {
   client.user.setPresence({ game: { name: "h:aide-Créé par Zytalcane", type: 0 } });
@@ -25,7 +21,7 @@ client.on("message", message => {
     .addField("** Liste des commandes:**", "__Commandes Standards:__")
     .addField("h:aide", "Affiche toute les commandes")
     .addField("h:RP", "Donne la date du prochain RP")
-    .addField("c:pc", "Appelle les unités PC")
+    .addField("h:pc", "Appelle les unités PC")
     .addField("h:info", "Donne")
     .addField("h:HL2", "Histoire de HalfLife 2")
     .addField("h:achat", "Prix de la Contrebande")
@@ -45,7 +41,7 @@ client.on("message", message => {
      message.channel.sendEmbed(aide);
    }
 
-  if (message.content.startsWith(CALL + "pc")) {
+  if (message.content.startsWith(PREFIX + "pc")) {
     message.reply("⚠️**Appelle une __Protection Civil__!**⚠️")
   }
 
@@ -67,17 +63,4 @@ if (message.content.startsWith(PREFIX + "achat")) {
   message.channel.sendEmbed(contrebande);
   }
 
-  if (message.content.startsWith(S + "alut"))
-    message.reply("Salut 😉");
-
-
-  if (message.content.startsWith(B + 'onjour'))
-    message.reply("Bonjour à toi 😉");
-
-  if (message.content.startsWith(Y + "o"))
-    message.reply("Coucou !😉");
-
-  if (message.content.startsWith(B + "onsoir"))
-    message.reply("Bonsoir 😉")
- })
-  
+ });
